@@ -15,23 +15,22 @@ UC12 — Delete or update an order
 
 Functional Requirements :
 
-FR1 — Create, view, update, and delete customers    
-FR2 — Store employee data     
-FR3 — Maintain product categories     
-FR4 — Add products with categories    
-FR5 — View product list    
-FR6 — Create orders with customer and employee binding    
-FR7 — Add products to an order     
-FR8 — View order history     
-FR9 — Calculate order cost     
-FR10 — Edit or delete orders    
+FR1 — Customer management    
+FR2 — Employee management     
+FR3 — Product category maintenance     
+FR4 — Product management   
+FR5 — Product catalog viewing    
+FR6 — Order creation   
+FR7 — Order item management    
+FR8 — Order history display   
+FR9 — Order total calculation     
+FR10 — Order update or deletion  
+FR11 — User authorization 
 
 Non-Functional Requirements :
 
 NFR1 — Data integrity through foreign keys     
-NFR2 — Performance (query ≤ 2 seconds if we have less than 400 users)     
-NFR3 — User authorization     
-NFR4 — Transactional consistency (ACID)      
-NFR5 — System extensibility       
-NFR6 — SQL interface compatibility      
-NFR7 — Portability between OS and DBMS     
+NFR2 — Performance (query ≤ 2 seconds if we have less than 400 users)         
+NFR3 — Transactional consistency (ACID)      
+NFR4 — System flexibility      
+NFR5 — SQL interface compatibility         
