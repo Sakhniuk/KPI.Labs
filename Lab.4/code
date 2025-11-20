@@ -1,0 +1,43 @@
+
+' UML Activity with swimlanes for "Place an Order"
+|Customer|
+start
+:Open product catalog;
+:Select product(s) and add to cart;
+split
+  :Review cart;
+split again
+  :Enter shipping details;
+end split
+:Proceed to checkout;
+|OrderService|
+:validateCart();
+if (all items available?) then (yes)
+  :createOrderDraft();
+  |PaymentService|
+  :processPayment(paymentInfo);
+  if (payment successful?) then (yes)
+    |OrderService|
+    :finalizeOrder();
+    |Database|
+    :saveOrder(orderData);
+    |NotificationService|
+    :sendConfirmation(orderID);
+    |Customer|
+    :Receive confirmation;
+    stop
+  else (no)
+    |OrderService|
+    :markPaymentFailed();
+    |Customer|
+    :Show "Payment failed" message;
+    stop
+  endif
+else (no)
+  |OrderService|
+  :notifyOutOfStock(items);
+  |Customer|
+  :Show "Out of stock" message;
+  stop
+endif
+end
